@@ -1,0 +1,16 @@
+# basic configuration at startup
+# called by .xinitrc
+
+#!/bin/bash
+
+# wallpaper
+feh --bg-scale ~/.config/wallpaper.png
+
+# turn off touchpad
+xinput disable "SynPS/2 Synaptics TouchPad" &
+
+# transparency for terminal
+xcompmgr -c &
+
+# turn on slock after 10 minutes of inactivity
+xautolock -time 10 -locker slock &
